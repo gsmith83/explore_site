@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Test</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body {
+background: -webkit-linear-gradient(red, purple, blue, green, yellow, graytext, graytext); /* For Safari */
+background: -o-linear-gradient(red, purple, blue, green, yellow, graytext, graytext); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(red, purple, blue, green, yellow, graytext, graytext); /* For Firefox 3.6 to 15 */
+background: linear-gradient(red, purple, blue, green, yellow, graytext, graytext); /* For everything else (must be last) */}
+
+#fade
+{
+color:white;
+animation:fadein 15s;
+-webkit-animation:fadein 15s; /* Safari and Chrome support */
+}
+
+@keyframes fadein
+{
+0% {color:black;}
+70% {color:black;}
+100% {color:white;}
+}
+@-webkit-keyframes fadein /* Safari and Chrome */
+{
+0% {color:black;}
+70% {color:black;}
+100% {color:white;}
+}
+</style>
+<script>
+function color(){
+document.getElementById("here").innerHTML="The color you have chosen has been linked to" +
+	" unpredictable thinking and/or disruptive behavior." +
+	" Please take the time to internalize your new favorite color:";
+document.getElementById("fade").innerHTML="Grey #31";
+document.body.style.background = "graytext";
+}
+</script>
+</head>
+
+<body>
+
+<div class="container">
+<h2>A personal connection to a color has been known to boost, or influence, a person's creative process.</h2><br>
+<h2>What is your favorite color?</h2>
+<input type='text'><button type='button' onclick='color()'>SUBMIT</button><br><br>
+<p id='here' style='font-size:30px'></p>
+<h2 id='fade'></h2>
+</div>
+
+<div class="continue"><a href="conform.html" id="random_link">Continue your treatment</a></div>
+
+</body>
+</html>

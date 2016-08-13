@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{background:black}
+</style>
+<script type='text/javascript'>
+var imageID=0;
+function changeimage(every_seconds){
+    //change the image
+    if(!imageID){
+        document.getElementById("myimage").src="images/glitch1.jpg";
+        imageID++;
+    }
+    else{if(imageID==1){
+        document.getElementById("myimage").src="images/glitch2.jpg";
+        imageID++;
+    }
+    else{if(imageID==2){
+        document.getElementById("myimage").src="images/glitch3.jpg";
+        imageID++;
+    }
+    else{if(imageID>=3 && imageID<20){
+        document.getElementById("error").innerHTML="<br>The operating system has encountered"+
+		" a problem completing your request. <br><br> Error code: 8309808-SYS:<br><br>"+
+		"An error has occurred during your personalized indoctrination process. Please<br>"+
+		" disregard any further attempt to disrupt your ongoing training process.<br><br>"+
+		"FAILURE (8309808): 1: Verify BCDBootEx<br>Automated Treatment deployment failed "+
+		"to run the action: Persuasive Thought Reform.<br>Operation aborted.<br><br>"+
+		"Task Sequence Engine failed. Code: Error unknown.<br>"+
+		"Task process reboot failed. Code: Error unknown.<br>Error unknown.<br>Error unknown."+
+		"<br>ErRor uNKnoWN.<br>E71brr4aor u84N9dKnoW47N<br>.<br>.<br>.";
+	imageID++;
+    }
+    else{if(imageID>=20){
+        self.location="wake.html";
+    }
+    }
+    }}}
+    
+    //call same function again for x of seconds
+    setTimeout("changeimage("+every_seconds+")",((every_seconds)*200));
+    
+    document.getElementById("music1").volume=0.1;
+}
+</script>
+</head>
+<body onload='changeimage(2)'>
+<div id="error" style='color:white;font-size:28px;font-family:Lucida console, sans-serif;text-align:left;position:absolute;width:100%;height:100%;left:20px;top:0px;right:0px;bottom:0px' align='center'><img width='1500' height='1500' id='myimage' src="glitch3.jpg"></div>
+<audio id="music1" autoplay>
+  <source id="music_src" src="audio/prison.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>

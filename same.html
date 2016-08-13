@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<title>Fix the picture</title>
+<style>
+#drag {width:200px;height:200px;padding:5px;border:3px solid white;}
+#hidden {visibility: hidden;}
+</style>
+<script>
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+document.getElementById("hidden").style.visibility="visible";
+document.getElementById("hiddencircle").style.visibility="visible";
+document.getElementById("random_link").style.visibility="visible";
+}
+</script>
+</head>
+<body>
+
+<div style="height:650px; width:80%; margin:auto; margin-top:5%; padding:2%; padding-top:1%; background-color: black;">
+<h2>There is something wrong with the diagram below. Please fix it.</h2>
+<div id="drag" ondrop="drop(event)" ondragover="allowDrop(event)" style="float:right">
+<img src="images/trashcan.jpg" width="200" height="200">
+</div>
+<br>
+<img id="circle" src="images/circle1.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle2.jpg" width="200" height="200" title='One of us'>
+<img id="dragimage" src="images/heart.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200" title='An outsider'>
+<img id="circle" src="images/circle3.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle2.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle3.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle1.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle2.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle3.jpg" width="200" height="200" title='One of us'>
+<img id="circle" src="images/circle2.jpg" width="200" height="200" title='One of us'>
+<img id="hiddencircle" src="images/circle3.jpg" width="200" height="200" style="visibility:hidden"><br>
+<div id="hidden"><p style="font-size:38px;">Good. You did very well recognizing the value of uniformity.</p></div>
+
+</div>
+<div class="continue"><a href="music.html" id="random_link" style="visibility:hidden">Continue your treatment</a></div>
+
+</body>
+</html>

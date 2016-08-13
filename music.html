@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<!-- Asks user to select an mp3 file to play, then plays something else -->
+<html>
+<head>
+<title>Music</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+function music(){
+document.getElementById("here").innerHTML="The music you have chosen has been red-flagged for containing"+
+	" one or more of the following qualities:";
+document.getElementById("here2").innerHTML="<li>Offensive or dangerous lyrics</li><li>A high tempo</li><li>Unusual or"+
+	" non-standard musical structure</li><li>Colorful imagery";
+document.getElementById("here3").innerHTML="A more appropriate song has been chosen for you. Please take"+
+	" a moment to reflect on what makes this music good for someone like you.";
+document.getElementById("music1").play();
+document.getElementById("music1").volume=0.5;
+document.getElementById("music1").playbackRate=0.7;
+document.getElementById("random_link").style.visibility="visible";
+}
+</script>
+<script src="myExplore.js"></script>
+<style>
+a
+{
+color:white;
+animation:fadein 20s;
+-webkit-animation:fadein 20s; /* Safari and Chrome support */
+}
+
+@keyframes fadein
+{
+0% {color:graytext;}
+80% {color:graytext;}
+100% {color:white;}
+}
+@-webkit-keyframes fadein /* Safari and Chrome */
+{
+0% {color:graytext;}
+80% {color:graytext;}
+100% {color:white;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="color:white;text-decoration:none">Music can calm the savage soul </h1>
+    <h2>Please select a music file of your choosing.</h2>
+    <p style="font-size:20px;font-family:Lucida, sans-serif">Select music: <input type="file" name="music">
+
+    <button type="button" onclick="music()">SUBMIT</button></p>
+
+<audio loop id="music1">
+  <source id="music_src" src="audio/music.mp3" type="audio/mp3">
+</audio>
+<p id="here" style="text-align: justify;padding-left:10%"></p>
+<ul id="here2" style="text-align: justify;padding-left:20%;color:white"></ul>
+<p id="here3" style="text-align: justify;padding-left:10%"></p>
+</div>
+
+<div class="continue"><a href="reward.html" id="random_link">Continue your treatment</a></div>
+
+</body>
+</html>

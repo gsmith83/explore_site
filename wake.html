@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wake Up</title>
+<script src="myExplore.js"></script>
+<script>
+function music(){
+document.getElementById("music1").play();
+document.getElementById("music1").volume=0.1;
+}
+</script>
+<style>
+p
+{
+color:black;
+font-weight:700;
+font-size:60px;
+font-family: Verdana, sans-serif;
+text-align:center;
+margin-top:0;
+}
+a
+{
+color:#FF7B00;
+text-decoration:none;
+}
+a:hover
+{
+color:#FF3700;
+text-decoration:none;
+}
+.first
+{
+animation:fadein 10s;
+-webkit-animation:fadein 10s; /* Safari and Chrome support */
+}
+.second
+{
+animation:fadein 18s;
+-webkit-animation:fadein 18s; /* Safari and Chrome support */
+}
+.third
+{
+animation:fadeinlong 15s;
+-webkit-animation:fadeinlong 15s; /* Safari and Chrome support */
+}
+.fourth
+{
+animation:fadeinlong 20s;
+-webkit-animation:fadeinlong 20s; /* Safari and Chrome support */
+}
+.fifth
+{
+animation:fadeinlong 26s;
+-webkit-animation:fadeinlong 26s; /* Safari and Chrome support */
+}
+@keyframes fadein
+{
+0% {color:white;}
+40% {color:white;}
+100% {color:black;}
+}
+@-webkit-keyframes fadein /* Safari and Chrome */
+{
+0% {color:white;}
+40% {color:white;}
+100% {color:black;}
+}
+@keyframes fadeinlong
+{
+0% {color:white;}
+70% {color:white;}
+100% {color:black;}
+}
+@-webkit-keyframes fadeinlong /* Safari and Chrome */
+{
+0% {color:white;}
+70% {color:white;}
+100% {color:black;}
+}
+</style>
+</head>
+<body onload="music()">
+<audio loop id="music1">
+  <source id="music_src" src="audio/beach.mp3" type="audio/mp3">
+</audio>
+<p style="font-size:100px;font-weight: 700" class="first">No</p>
+<p class="second">You are stronger than that.</p>
+<p class="third">You do not blindly follow.</p>
+<p class="fourth">You have thoughts, ideas, feelings.</p>
+<p class="fifth">You are a <a class="fifth" href="flame.html">light </a>in the darkness.</p>
+</body>
+</html>
